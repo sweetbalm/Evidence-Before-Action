@@ -1,0 +1,27 @@
+{
+  "student_model": "xxxx",
+  "teacher_url": "http://127.0.0.1:8011",
+  "teacher_served_model": "xxxx",
+  "student_model_type": "qwen3_5",
+  "template": "qwen3_5",
+  "rollout_gpus": "0",
+  "trainer_gpus": "1",
+  "rollout_port": 8010,
+  "weight_sync_port": 51216,
+  "master_port": 29511,
+  "context_length": 32768,
+  "max_pixels": 1048576,
+  "max_completion_length": 4096,
+  "dataset": "opd/data/train.jsonl",
+  "output_dir": "opd/runs/student-lora",
+  "train": {
+    "lora_rank": 32,
+    "lora_alpha": 64,
+    "learning_rate": 0.000005,
+    "gradient_accumulation_steps": 4,
+    "max_steps": 100,
+    "save_total_limit": 1,
+    "warmup_ratio": 0.05,
+    "seed": 42
+  }
+}

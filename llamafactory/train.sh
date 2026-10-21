@@ -1,0 +1,30 @@
+llamafactory-cli train \
+    --stage sft \
+    --do_train \
+    --model_name_or_path "Qwen/Qwen3.5-27B" \
+    --dataset osworld_sft \
+    --dataset_dir ./data \
+    --template qwen3_5 \
+    --mask_history \
+    --image_max_pixels 1048576 \
+    --finetuning_type lora \
+    --lora_target all \
+    --lora_rank 128 \
+    --lora_alpha 256 \
+    --output_dir /lora_results \
+    --overwrite_output_dir \
+    --cutoff_len 16384 \
+    --preprocessing_num_workers 16 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 8 \
+    --lr_scheduler_type cosine \
+    --logging_steps 10 \
+    --warmup_ratio 0.1 \
+    --save_total_limit 1 \
+    --learning_rate 5e-5 \
+    --num_train_epochs 5.0 \
+    --plot_loss \
+    --bf16 \
+    --gradient_checkpointing \
+    --deepspeed ./ds_z3_config.json \
+    --trust_remote_code

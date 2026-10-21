@@ -1,0 +1,21 @@
+{
+  "task_root": "evaluation_examples/examples",
+  "trace_root": "opd/runs/traces",
+  "max_steps": 15,
+  "max_concurrent_envs": 1,
+  "max_total_response_tokens": 4096,
+  "pause_seconds": 1.0,
+  "teacher_http_timeout_seconds": 900,
+  "evaluate_at_end": true,
+  "desktop": {
+    "provider_name": "docker",
+    "path_to_vm": null,
+    "snapshot_name": "init_state",
+    "screen_size": [1920, 1080],
+    "headless": true,
+    "require_a11y_tree": false,
+    "require_terminal": false,
+    "os_type": "Ubuntu",
+    "enable_proxy": false
+  }
+}
